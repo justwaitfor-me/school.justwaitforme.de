@@ -1,0 +1,93 @@
+@import "var";
+@import "scss/bootstrap.scss";
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* Custom scrollbar for WebKit browsers */
+body * {
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #6200ff #f80000; /* thumb color | track color */
+}
+
+body *::-webkit-scrollbar {
+  width: 200px;
+}
+
+/* Track */
+body *::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgb(255, 0, 0);
+  border-radius: 10px;
+}
+
+/* Handle */
+body *::-webkit-scrollbar-thumb {
+  background: rgb(111, 255, 0);
+  border-radius: 1000px;
+}
+
+
+
+body {
+  display: grid;
+  overflow: hidden;
+
+  --s: 74px; /* control the size*/
+  --c1: #969696;
+  --c2: #e3e3e3;
+  --c3: #f0f0f0;
+
+  --_g: var(--c3) 0 120deg, #0000 0;
+  background: conic-gradient(from -60deg at 50% calc(100% / 3), var(--_g)),
+    conic-gradient(from 120deg at 50% calc(200% / 3), var(--_g)),
+    conic-gradient(
+      from 60deg at calc(200% / 3),
+      var(--c3) 60deg,
+      var(--c2) 0 120deg,
+      #0000 0
+    ),
+    conic-gradient(from 180deg at calc(100% / 3), var(--c1) 60deg, var(--_g)),
+    linear-gradient(
+      90deg,
+      var(--c1) calc(100% / 6),
+      var(--c2) 0 50%,
+      var(--c1) 0 calc(500% / 6),
+      var(--c2) 0
+    );
+  background-size: calc(1.732 * var(--s)) var(--s);
+
+  grid-template-columns: 150px auto;
+  column-gap: 40px;
+
+  padding: 25px;
+
+  aside {
+    height: 100%;
+    width: 100%;
+
+    border-radius: 5px;
+    background: rgba($color: #000000, $alpha: 0.7);
+  }
+
+  main {
+    height: 100%;
+    width: 100%;
+    padding: 10px;
+    padding-top: 0;
+
+    border-radius: 5px;
+    background: rgba($color: #000000, $alpha: 0.7);
+
+    overflow-y: scroll;
+
+    div {
+      margin-top: 10px;
+      height: 250px;
+      background: rgba($color: #ffffff, $alpha: 0.8);
+      border-radius: 5px;
+    }
+  }
+}
