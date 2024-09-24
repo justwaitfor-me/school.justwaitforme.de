@@ -1,14 +1,15 @@
-//colors-i
-$main: black;
-$outline: #9e363a;
-$shadow: #091f36;
-$details: #4f5f76;
-$border: whitesmoke;
-$text: white;
-$background: whitesmoke;
+$main: #000000;   // The main color, black
+$outline: #3E3E3E;  // Outline color, a gray from the palette
+$shadow: #242424;  // A darker gray for shadows
+$details: #5C5C5C; // A slightly lighter gray for details
+$invert-details: #B3B3B3; // Lighter gray, for inverted details
+$border: #A3A3A3;  // Lighter gray, for borders
+$text: #FFFFFF;    // White text
+$invert-text: #333333; // Darker gray text
+$background: #EAEAEA; // Very light gray for background
 
-$text-background: black;
-$border-background: black;
+$text-background: $main;   // Text background matching main color
+$border-background: $main; // Border background matching main color
 
 // scss-docs-start color-variables
 $blue:    #0d6efd !default;
@@ -48,6 +49,10 @@ $dark:          $gray-900 !default;
 //font sizes
 $input: 30pt;
 $normal: 13pt;
+
+//sizes
+$border-size: 2px;
+$icon-buffer: 0;
 
 // Quickly modify global styling by enabling or disabling optional features.
 
