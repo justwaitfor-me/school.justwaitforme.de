@@ -6,3 +6,5 @@ ErrorDocument 403 https://error.justwaitforme.de/403/
 
 SetEnv CLIENT_SECRET "f7349d8f43e2c8ec8796d7b09debcfdbe1b73267"
 SetEnv CLIENT_ID "10"
+
+
