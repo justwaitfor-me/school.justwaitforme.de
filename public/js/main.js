@@ -35,3 +35,10 @@ function drawChart() {
     chart.draw(data, options);
 
 }
+
+const myModal = document.getElementById('addHomeworkModal')
+const myInput = document.getElementById('myInput')
+
+myModal.addEventListener('shown.bs.modal', () => {
+    myInput.focus()
+})

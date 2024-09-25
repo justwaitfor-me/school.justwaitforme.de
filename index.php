@@ -1,3 +1,18 @@
+<?php
+require 'auth.php';
+
+if (isset($_GET["success"])) {
+	// die;
+}
+
+$jwt_token = auth(getenv('CLIENT_ID'), getenv('CLIENT_SECRET'));
+
+if ($jwt_token) {
+	echo "JWT Token: $jwt_token";
+} else {
+	echo "Failed to obtain JWT token";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +28,7 @@
 <body>
 	<aside>
 		<div class="wrapper">
-			<div class="item" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom"
+			<div class="item" type="button" onclick="window.location.href='dashboard'" data-bs-toggle="tooltip" data-bs-placement="bottom"
 				data-bs-title="Dashboard"><i class="bi bi-speedometer"></i>
 				<p>Dashboard</p>
 			</div>
@@ -98,36 +113,17 @@
 					<h1>Statistics</h1>
 					<div id="myChart"></div>
 				</section>
-				<section>
-					<h1>Lorem ipsum dolor sit amet.</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, accusamus culpa labore
-						praesentium
-						expedita reiciendis eius! Quaerat maxime iusto dolorum tempora sapiente nobis aut incidunt rerum
-						nemo iste, numquam ad.</p>
-				</section>
-				<section>
-					<h1>Lorem ipsum dolor sit amet.</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, accusamus culpa labore
-						praesentium
-						expedita
-						reiciendis eius! Quaerat maxime iusto dolorum tempora sapiente nobis aut incidunt rerum nemo
-						iste,
-						numquam ad.
-					</p>
-				</section>
-				<section>
-					<h1>Lorem ipsum dolor sit amet.</h1>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, accusamus culpa labore
-						praesentium
-						expedita
-						reiciendis eius! Quaerat maxime iusto dolorum tempora sapiente nobis aut incidunt rerum nemo
-						iste,
-						numquam ad.
-					</p>
-				</section>
+
+				<!-- Button trigger modal -->
+				<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addHomeworkModal">
+					Launch demo modal
+				</button>
+
+
 			</div>
 		</div>
 	</main>
+
 	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
 		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
 		crossorigin="anonymous"></script>
@@ -136,5 +132,48 @@
 		crossorigin="anonymous"></script>
 	<script src="public/js/main.js"></script>
 </body>
+
+<!-- Modal -->
+<div class="modal" id="addHomeworkModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="addHomeworkModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg modal-fullscreen-sm-down">
+		<form class="modal-content" method="post" action=".">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="exampleModalLabel">Add assignment</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<div class="input-group row">
+					<div class="col-8">
+						<div class="input-group flex-nowrap">
+							<span class="input-group-text item" id="subject-addon">Subject</span>
+							<input type="text" id="subject" name="subject" class="form-control item" placeholder="Math, Englisch, ..." aria-label="Username" aria-describedby="subject-addon">
+						</div>
+					</div>
+					<div class="col-4">
+						<input type="color" id="homework-color" name="homework-color" style="width: 100%;" class="form-control form-control-color item" value="#FF0000" title="Due Date">
+					</div>
+				</div>
+				<br>
+				<div class="input-group row">
+					<div class="col">
+						<input type="text" id="title" name="title" class="form-control item" placeholder="Titel" aria-label="Titel">
+					</div>
+					<div class="col">
+						<input type="date" id="due-date" name="due-date" class="form-control item" placeholder="Date" aria-label="Due Date" title="Due Date">
+					</div>
+				</div>
+				<br>
+				<div class="form-floating">
+					<textarea id="comments" name="comments" class="form-control item" placeholder="Leave a comment here" style="height: 100px"></textarea>
+					<label for="comments">Comments</label>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-primary">Add Item</button>
+			</div>
+		</form>
+	</div>
+</div>
 
 </html>
