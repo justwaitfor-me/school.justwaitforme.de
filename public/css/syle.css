@@ -11978,6 +11978,23 @@ body * {
   scrollbar-width: thin;
 }
 
+html #addHomeworkModal {
+  color: #333333;
+}
+html #addHomeworkModal button {
+  border-radius: 8px;
+  border: 2px solid #A3A3A3;
+  background: rgba(0, 0, 0, 0.7);
+  color: #FFFFFF;
+}
+html #addHomeworkModal button:hover {
+  background: rgba(179, 179, 179, 0.9);
+  color: #333333;
+}
+html #addHomeworkModal .modal-body .item {
+  border-color: #A3A3A3;
+}
+
 body {
   display: grid;
   overflow: hidden;

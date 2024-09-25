@@ -14,6 +14,30 @@ body * {
   scrollbar-width: thin;
 }
 
+html {
+  #addHomeworkModal {
+    color: $invert-text;
+
+    button {
+      border-radius: 8px;
+      border: $border-size solid $border;
+      background: rgba($main, $alpha: 0.7);
+      color: $text;
+
+      &:hover {
+        background: rgba($invert-details, $alpha: 0.9);
+        color: $invert-text;
+      }
+    }
+
+    .modal-body {
+      .item {
+        border-color: $border;
+      }
+    }
+  }
+}
+
 body {
   display: grid;
   overflow: hidden;
