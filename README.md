@@ -1,4 +1,5 @@
-# {{project_name}}
+
+# school.justwaitforme.de
 
 ## Table of Contents
 
@@ -15,14 +16,25 @@
 
 ## Introduction
 
-Welcome to **{{project_name}}**! This project aims to [briefly describe the purpose and goals of the project]. Whether you're here to contribute or use this software, you'll find everything you need to get started in this repository.
+Welcome to **school.justwaitforme.de**! This project aims to provide a comprehensive dashboard for schools and students with features to manage their teaching and learning process. Whether you're here to contribute or use this software, you'll find everything you need to get started in this repository.
 
 ## Project Structure
 
 This project is organized in the following structure:
 
-{{project_name}}/ ├── .github/ # GitHub workflows and CI/CD configuration │ └── workflows/ │ └── ci.yml # Basic GitHub Actions workflow ├── config/ # Configuration files for project setup ├── docs/ # Documentation files ├── src/ # Main source code directory ├── tests/ # Test files and test suite ├── scripts/ # Automation and utility scripts ├── README.md # Project description ├── LICENSE # License file for the project ├── .gitignore # Git ignore file for unnecessary files └── .env.example # Example environment file
-
+school.justwaitforme.de/ 
+├── .github/ # GitHub workflows and CI/CD configuration 
+│   └── workflows/ 
+│       └── ci.yml # Basic GitHub Actions workflow 
+├── config/ # Configuration files for project setup 
+├── docs/ # Documentation files 
+├── src/ # Main source code directory 
+├── tests/ # Test files and test suite 
+├── scripts/ # Automation and utility scripts 
+├── README.md # Project description 
+├── LICENSE # License file for the project 
+├── .gitignore # Git ignore file for unnecessary files 
+└── .env.example # Example environment file
 
 ### Explanation of Directories and Files
 
@@ -48,12 +60,12 @@ This project is organized in the following structure:
 
 ## Installation
 
-Follow these steps to get **{{project_name}}** up and running on your local machine:
+Follow these steps to get **school.justwaitforme.de** up and running on your local machine:
 
 ### Prerequisites
 
 - Node.js >= 14.x.x (or your preferred runtime)
-- Python 3.x (if applicable)
+- PHP (no specific framework)
 - Other dependencies (add if relevant, e.g., Docker, etc.)
 
 ### Steps to Install
@@ -61,85 +73,99 @@ Follow these steps to get **{{project_name}}** up and running on your local mach
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/{{author_name}}/{{project_name}}.git
+   git clone https://github.com/JustWait/school.justwaitforme.de.git
+   ```
 
-Navigate into the project directory:
+2. Navigate into the project directory:
 
-cd {{project_name}}
-Install dependencies:
+   ```bash
+   cd school.justwaitforme.de
+   ```
 
-If using Node.js:
+3. Install dependencies:
 
-npm install
-If using Python:
+   If using Node.js:
 
-pip install -r requirements.txt
-(Optional) Copy the .env.example file to .env and set up your environment variables:
+   ```bash
+   npm install
+   ```
 
+   If using PHP:
 
-cp .env.example .env
-Update the .env file with your specific configuration (e.g., API keys, database credentials).
+   Follow your standard PHP setup process.
+
+4. (Optional) Copy the .env.example file to .env and set up your environment variables:
+
+   ```bash
+   cp .env.example .env
+   ```
+
+   Update the .env file with your specific configuration (e.g., API keys, database credentials).
 
 You're ready to start!
 
-Configuration
+## Configuration
+
 The configuration files in the config/ directory allow you to tailor the project for your environment. Modify these files based on your needs:
 
-config/database.yml: Set up your database connection here.
-config/api_keys.json: Place your API keys and other sensitive information here.
+- `config/database.yml`: Set up your database connection here.
+- `config/api_keys.json`: Place your API keys and other sensitive information here.
+
 Be sure to never commit sensitive information into version control! Use .env or secure vaults for secret management.
 
-Usage
+## Usage
+
 After installing, you can run the project with:
 
 If using Node.js:
 
-
+```bash
 npm start
-If using Python:
+```
 
+If using PHP:
 
-python app.py
+Follow your standard PHP server setup process.
+
 Make sure to check the docs/ directory for additional usage instructions and examples, particularly for any specific commands or tools related to the project.
 
-Testing
-{{project_name}} uses [your test framework] for unit and integration testing. To run the tests:
+## Testing
+
+school.justwaitforme.de uses manual testing for unit and integration testing. To run the tests:
 
 Ensure you have installed the necessary dependencies (see Installation).
-Run the test suite:
-If using Node.js:
 
-npm test
-If using Python:
+## Contributing
 
-pytest
-For continuous testing during development, consider running the test watcher or setting up automated tests via GitHub Actions.
-
-Contributing
 We welcome contributions! To contribute:
 
-Fork the repository
-Create a new branch (git checkout -b feature-branch)
-Make your changes and commit them (git commit -am 'Add new feature')
-Push to your branch (git push origin feature-branch)
-Create a pull request.
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Make your changes and commit them (`git commit -am 'Add new feature'`)
+4. Push to your branch (`git push origin feature-branch`)
+5. Create a pull request.
+
 Before submitting a pull request, please ensure that:
 
-Your code is well-documented.
-You have written or updated tests.
-You have followed the code style and project conventions.
+- Your code is well-documented.
+- You have written or updated tests.
+- You have followed the code style and project conventions.
+
 For more detailed contributing guidelines, see CONTRIBUTING.md.
 
-CI/CD
+## CI/CD
+
 This project is set up with continuous integration (CI) using GitHub Actions. The workflow is defined in .github/workflows/ci.yml. This file contains the automated steps for:
 
-Running tests on every push to the repository.
-Linting code to enforce consistent style.
-Building and deploying the application (if applicable).
+- Running tests on every push to the repository.
+- Linting code to enforce consistent style.
+- Building and deploying the application (if applicable).
+
 You can modify the CI workflow to add additional steps, like deployment or notifications.
 
 Example CI Workflow (.github/workflows/ci.yml):
 
+```yaml
 name: CI Pipeline
 
 on:
@@ -161,13 +187,22 @@ jobs:
           node-version: '14'
       - run: npm install
       - run: npm test
-License
+```
+
+## License
+
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-Acknowledgments
+## Acknowledgments
+
 [List any contributors, libraries, or tools used in the project]
+
 Special thanks to [Name] for [specific contributions].
+
 Feel free to modify this README template to suit the specifics of your project. Adjust the steps based on the dependencies, environment, and setup specific to your project.
 
-
 This `README.md` file provides a thorough guide for anyone interacting with your project. It is ready to be customized with specific details for your repository.
+
+```
+
+Please review and adjust any sections as needed, especially the testing and usage sections, to better fit your project's specifics.
